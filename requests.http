@@ -1,0 +1,25 @@
+### Products Show
+GET http://localhost:3000/products/1
+
+### Products Create
+POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "name":"soda",
+  "price":3,
+  "image_url":"https://images.unsplash.com/photo-1655604646151-8edc8746bb01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlc2NhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+  "description": "refreshing beverage"
+  
+}
+
+### Products Update
+PATCH http://localhost:3000/products/1.json
+Content-Type: application/json
+
+{
+  "price": 7
+}
+
+### Products Destroy
+DELETE http://localhost:3000/products/1.json
