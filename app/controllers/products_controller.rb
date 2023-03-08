@@ -21,9 +21,15 @@ class ProductsController < ApplicationController
       price: params[:price],
       image_url: params[:image_url],
       description: params[:description],
+      inventory: params[:inventory],
     )
-    product.save
-    render json: product.as_json
+    if product.save
+      # happy path
+      render json: product.as_json
+    else
+      # sad path
+      render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -31,7 +37,13 @@ class ProductsController < ApplicationController
     product = Product.find_by(id: product_id)
     product.update(name: params[:name] || product.name, price: params[:price] || product.price, image_url: params[:image_url] || productimage_url,
                    description: params[:description] || product.description)
-    render json: product.as_json
+    if product.valid?
+      # happy path
+      render json: product.as_json
+    else
+      # sad path
+      render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
