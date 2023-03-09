@@ -1,6 +1,9 @@
 ### Products Show
 GET http://localhost:3000/products/1
 
+### Products Index
+GET http://localhost:3000/products.json
+
 ### Products Create
 POST http://localhost:3000/products.json
 Content-Type: application/json
