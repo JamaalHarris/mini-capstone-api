@@ -14,9 +14,10 @@ class ProductsController < ApplicationController
     product = Product.new(
       name: params[:name],
       price: params[:price],
-      image_url: params[:image_url],
       description: params[:description],
       inventory: params[:inventory],
+      supplier_id: params[:supplier_id],
+      color: params[:color],
     )
     if product.save
       # happy path
@@ -30,8 +31,14 @@ class ProductsController < ApplicationController
   def update
     product_id = params[:id]
     product = Product.find_by(id: product_id)
-    product.update(name: params[:name] || product.name, price: params[:price] || product.price, image_url: params[:image_url] || productimage_url,
-                   description: params[:description] || product.description)
+    product.update(
+      name: params[:name] || product.name,
+      price: params[:price] || product.price,
+      description: params[:description] || product.description,
+      inventory: params[:inventory] || product.inventory,
+      supplier_id: params[:supplier_id] || product.supplier_id,
+      color: params[:color] || product.color,
+    )
     if product.valid?
       # happy path
       render json: product.as_json
@@ -42,8 +49,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find_by(id: product_id)
-    recipe.destroy
+    product = Product.find_by(id: params[:id])
+    product.destroy
     render json: { message: "Product Desdtroyed" }
   end
 end

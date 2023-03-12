@@ -3,11 +3,11 @@
 one:
   name: MyString
   price: 1
-  image_url: MyString
-  description: MyString
+  description:  I can write whatever I want
+  supplier: one
 
 two:
   name: MyString
   price: 1
-  image_url: MyString
-  description: MyString
+  description: I can write whatever I want
+  supplier: two
