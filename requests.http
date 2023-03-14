@@ -6,15 +6,16 @@ GET http://localhost:3000/products.json
 
 ### Products Create
 POST http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Nzg4MzgzNDJ9.ATu3FIfSFKVQZWevLOOCPqrvCaIJScjw70AVs5DHExE
 Content-Type: application/json
 
 {
-  "name":"purple drank",
+  "name":"diet tropic thunder",
   "price":3,
   "image_url":"https://images.unsplash.com/photo-1655604646151-8edc8746bb01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlc2NhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-  "description": "purple stuff",
-  "supplier_id": "1"
-  "inventory": 1
+  "description": "light purple stuff",
+  "supplier_id": "1",
+  "inventory": 2
   
 }
 
@@ -28,3 +29,24 @@ Content-Type: application/json
 
 ### Products Destroy
 DELETE http://localhost:3000/products/1.json
+
+
+### User Create (aka Signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "Jamaal",
+  "email": "jamaal@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Session Create (aka Login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "jamaal@test.com",
+  "password": "password"
+}
