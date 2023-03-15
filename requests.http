@@ -16,7 +16,6 @@ Content-Type: application/json
   "description": "light purple stuff",
   "supplier_id": "1",
   "inventory": 2
-  
 }
 
 ### Products Update
@@ -50,3 +49,23 @@ Content-Type: application/json
   "email": "jamaal@test.com",
   "password": "password"
 }
+
+### Orders Create
+POST http://localhost:3000/orders.json
+Authorization: Bearer 
+Content-Type: application/json
+
+{
+  "user_id":,
+  "product_id":,
+  "quantity":,
+  "subtotal":,
+  "tax":,
+  "total": 
+}
+
+### Orders Show
+GET http://localhost:3000/orders/1
+
+### Orders Index
+GET http://localhost:3000/orders.json
