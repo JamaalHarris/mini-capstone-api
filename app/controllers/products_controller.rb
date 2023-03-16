@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @products = Product.all
     render template: "products/index"
@@ -6,8 +8,8 @@ class ProductsController < ApplicationController
 
   def show
     product_id = params[:id]
-    product = Product.find_by(id: product_id)
-    render json: product.as_json
+    @product = Product.find_by(id: product_id)
+    render template: "products/show"
   end
 
   def create

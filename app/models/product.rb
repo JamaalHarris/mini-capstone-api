@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates :description, length: { in: 10..500 }
   # validates :inventory, numericality: { only_integer: true }
   belongs_to :supplier
-  has_many: order
+  has_many :order
   # def supplier
   #   Supplier.find_by(id: supplier_id)
   # end

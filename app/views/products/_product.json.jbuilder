@@ -1,9 +1,9 @@
 json.id product.id
 json.name product.name
 json.price product.price
-json.is_discounted? product.is_discounted?
 json.tax product.tax
 json.total product.total
+json.is_discounted? product.is_discounted?
 json.description product.description
 json.inventory product.inventory
 json.supplier product.supplier

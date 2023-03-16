@@ -7,13 +7,15 @@ Rails.application.routes.draw do
   # get "/product_2" => "product#product_2"
   # get "/all_product" => "product#all_product"
   get "/products" => "products#index"
-
   get "/products/:id" => "products#show"
   post "/products" => "products#create"
   patch "/products/:id" => "products#update"
   delete "products/:id" => "products#destroy"
+
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
+
   get "/orders/:id" => "orders#show"
   get "/orders" => "orders#index"
+  post "/orders" => "orders#create"
 end
