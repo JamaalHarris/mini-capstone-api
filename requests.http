@@ -2,7 +2,7 @@
 GET http://localhost:3000/products/1
 
 ### Products Index
-GET http://localhost:3000/products.json
+GET http://localhost:3000/products.json?category=
 
 ### Products Create
 POST http://localhost:3000/products.json
@@ -52,7 +52,7 @@ Content-Type: application/json
 
 ### Orders Create
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NzkwMDk4MDF9.f3oWm92iMsiMf8yXLa-3tcVS7-n-VBCCfHOJWHx2gRI
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NzkzMzE3OTN9.gMAAxIXy18dyq7rItVsm1iDGnZ-81I0wy93CgOLWeU4
 Content-Type: application/json
 
 {
@@ -67,3 +67,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NzkwMDk4M
 ### Orders Index
 GET http://localhost:3000/orders.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NzkwMDk4MDF9.f3oWm92iMsiMf8yXLa-3tcVS7-n-VBCCfHOJWHx2gRI
+
+### Carted Products Create
+POST http://localhost:3000/carted_products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NzkzMzE3OTN9.gMAAxIXy18dyq7rItVsm1iDGnZ-81I0wy93CgOLWeU4
+Content-Type: application/json
+
+{
+"product_id": 1,
+"quantity": 1
+}
+
+### Carted Products Index
+GET http://localhost:3000/carted_products.json
+Authorization: 
