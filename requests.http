@@ -81,3 +81,7 @@ Content-Type: application/json
 ### Carted Products Index
 GET http://localhost:3000/carted_products.json
 Authorization: 
+
+### Carted Product Destroy
+DELETE http://localhost:3000/carted_products/5.json
+Authorization: Bearer
